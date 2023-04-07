@@ -1,6 +1,6 @@
 # Jamstack
 
-[Click here for live](https://sparkling-manatee-3c1134.netlify.app/)
+[Click here for live example](https://sparkling-manatee-3c1134.netlify.app/)
 
 ## JavaScript, APIs and Markup
 
