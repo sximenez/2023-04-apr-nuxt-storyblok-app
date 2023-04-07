@@ -10,16 +10,17 @@ It uses JavaScript, API's and HMTL markup.
 
 When displayed content needs to be dynamic, it exploits JavaScript.
 
-Pros:
+| Pros                          | Advantages                                     |
+| ----------------------------- | ---------------------------------------------- |
+| No server side processing     | Better performance and less energy consumption |
+| Microservices                 | Less surface area for attacks                  |
+| Cheaper                       |
+| Better development experience |
 
-No server side processing > better performance > less energy consumption
-Microservices > less surface area for attacks
-Cheaper
-Better development experience
-
-Cons:
-Short delays to live > live previews(Storyblok)
-The bigger the site, the longer it takes to build
+| Cons                                              | Fixes                       |
+| ------------------------------------------------- | --------------------------- |
+| Short delays to live                              | Live previews (Storyblok)   |
+| The bigger the site, the longer it takes to build | Nuxt cherry-picked building |
 
 Interesting: [how to migrate from WordPress to Jamstack](https://www.smashingmagazine.com/2020/01/migration-from-wordpress-to-jamstack/)
 
@@ -33,11 +34,13 @@ The Jamstack approach means serving static HTML to users.
 
 There are many popular tools to create static pages:
 
-- Hugo (GO)
-- Eleventy (JS) > very lean, only static HTML, no boilerplate JS shipped
-- Next and Gatsby for React > ships static HTML, but hydrated as a React app > SPA-like feeling
-- Astro > partial hydration possible > great for performance and very popular
-- Nuxt > like Next, solid technical reasons > incremental SSG (partial build possible, caching already built components), community and developer experience
+| Tools                     | Details                                                                                                                                             |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Hugo (GO)                 |                                                                                                                                                     |
+| Eleventy (JS)             | Very lean, only static HTML, no boilerplate JS shipped                                                                                              |
+| Next and Gatsby for React | Ships static HTML, but hydrated as a React app > SPA-like feeling                                                                                   |
+| Astro                     | Partial hydration possible > great for performance and very popular                                                                                 |
+| Nuxt                      | Like Next, solid technical reasons > incremental SSG (partial build possible, caching already built components), community and developer experience |
 
 ## Nuxt - Storyblok project
 
@@ -101,3 +104,8 @@ You can test the website's performance :
 3. Change `npm run build` to `npm run generate`
 
 (Netlify takes care of the building phase)
+
+## Post-deployment
+
+1. Add Netlify's live preview URL within Storyblok
+2. Add a \_redirects file to public so that Netlify can interpret previews correctly
