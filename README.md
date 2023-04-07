@@ -108,4 +108,21 @@ You can test the website's performance :
 ## Post-deployment
 
 1. Add Netlify's live preview URL within Storyblok
-2. Add a \_redirects file to public so that Netlify can interpret previews correctly
+2. Add a \_redirects file to the public folder so that Netlify can interpret previews correctly
+
+```JavaScript
+/* _storyblok=:id / 200
+```
+
+3. Use Storyblok's queries to block drafts from showing on live page
+
+```JavaScript
+version: useRoute().query._storyblok ? "draft" : "published"
+```
+
+4. Trigger automatic rebuilds on Netlify
+
+Every time an update is made, the static file needs to be rebuilt.
+
+Netlify > Site Settings > Build & Deploy > Build hooks > Give the hook a name > Copy hook
+Storyblok > Settings > Webhooks > Paste hook
